@@ -118,8 +118,6 @@ VibeDocker/
 │   └── vibedocker-icon.svg        # Branded primary icon asset
 ├── .env.example                   # Template for environment variables (OpenRouter API Key)
 ├── .gitignore                     # Git ignore rules for node_modules, .next, and environment files
-├── AGENTS.md                      # Agent and coding assistant execution guidelines
-├── CLAUDE.md                      # Claude instructions pointer
 ├── HOW_TO_RUN.md                  # Comprehensive step-by-step run & deployment guide
 ├── PACKAGES_AND_EXTENSIONS.md     # Full directory of all packages and recommended IDE extensions
 ├── eslint.config.mjs              # ESLint 9 configuration file
