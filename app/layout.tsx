@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/vibedocker-icon.svg?v=3", type: "image/svg+xml" },
-      { url: "/vibedock-icon.svg?v=3", type: "image/svg+xml" },
       { url: "/icon.svg?v=3", type: "image/svg+xml" },
     ],
     shortcut: "/vibedocker-icon.svg?v=3",

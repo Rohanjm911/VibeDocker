@@ -102,7 +102,6 @@ VibeDocker/
 │       ├── HeaderBar.tsx          # Top navigation bar with notifications and profile triggers
 │       ├── NotificationPopover.tsx# Live notification center with interactive alerts
 │       ├── OnboardingModal.tsx    # Interactive introductory tour for first-time visitors
-│       ├── PlatformBadge.tsx      # Colored badge indicators for social networks
 │       ├── ProfilePopover.tsx     # Active creator profile details & persona switcher
 │       ├── Sidebar.tsx            # Collapsible navigation drawer with real-time active indicators
 │       └── VibeDockLogo.tsx       # Branded vector SVG logo with glowing aesthetics
@@ -114,7 +113,6 @@ VibeDocker/
 │   └── utils.ts                   # Utility helper for class merging (clsx + tailwind-merge)
 ├── public/
 │   ├── avatars/                   # Pre-seeded creator avatar portrait photographs
-│   ├── vibedock-icon.svg          # Branded standalone SVG icon
 │   └── vibedocker-icon.svg        # Branded primary icon asset
 ├── .env.example                   # Template for environment variables (OpenRouter API Key)
 ├── .gitignore                     # Git ignore rules for node_modules, .next, and environment files
