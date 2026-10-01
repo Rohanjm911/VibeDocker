@@ -32,6 +32,7 @@ import { useUser } from "@/lib/useUser";
 import { cn } from "@/lib/utils";
 import AnimeCounter from "@/components/shared/AnimeCounter";
 import AnimePulseBar from "@/components/shared/AnimePulseBar";
+import LiveContentSimulator from "@/components/dashboard/LiveContentSimulator";
 
 const recentPosts = [
   { title: "High-voltage morning routine (5 brutal sets)", platform: "YouTube", score: 94, status: "Published", views: "38.2K", likes: "4.8K", hold: "+44.8%", retention: "89% 3s Hold" },
@@ -85,23 +86,28 @@ export default function DashboardPage() {
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto space-y-6">
-      {/* 1. Executive Creator Dossier (Apple-style Stealth Banner) */}
+      {/* 1. Executive Creator Dossier (Ultra-Precision Stealth Banner with Aurora Flare) */}
       <motion.div
         initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
-        className="obsidian-card p-5 sm:p-6 relative overflow-hidden"
+        className="obsidian-card p-5 sm:p-6 relative overflow-hidden rounded-2xl group"
       >
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 relative z-10">
           {/* Creator Profile Specs */}
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-xl bg-[#0f1016] border border-white/[0.12] p-[1px] flex-shrink-0 overflow-hidden">
-              <div className="w-full h-full rounded-[10px] flex items-center justify-center text-white font-medium text-lg overflow-hidden bg-black/40">
-                {user.avatarUrl ? (
-                  <img src={user.avatarUrl} alt={user.name} className="w-full h-full object-cover" />
-                ) : (
-                  user.avatar
-                )}
+            <div className="relative">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-b from-purple-500/30 via-white/10 to-transparent p-[1px] flex-shrink-0 overflow-hidden shadow-[0_8px_20px_-4px_rgba(168,85,247,0.3)]">
+                <div className="w-full h-full rounded-[15px] flex items-center justify-center text-white font-medium text-lg overflow-hidden bg-[#0d0e14]">
+                  {user.avatarUrl ? (
+                    <img src={user.avatarUrl} alt={user.name} className="w-full h-full object-cover" />
+                  ) : (
+                    user.avatar
+                  )}
+                </div>
               </div>
+              <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-[#030305] flex items-center justify-center shadow-[0_0_8px_rgba(16,185,129,0.8)]" title="Live / Active">
+                <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+              </span>
             </div>
 
             <div className="min-w-0">
@@ -112,28 +118,35 @@ export default function DashboardPage() {
                 {user.verified && (
                   <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                 )}
-                <span className="text-[10px] font-mono text-white/50 px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.07] capitalize">
+                <span className={cn(
+                  "text-[10px] font-mono font-medium px-2.5 py-0.5 rounded-full border capitalize shadow-sm",
+                  user.platform.toLowerCase() === "twitch"
+                    ? "text-purple-300 bg-purple-500/15 border-purple-500/30 shadow-[0_0_12px_rgba(168,85,247,0.2)]"
+                    : user.platform.toLowerCase() === "youtube"
+                    ? "text-rose-300 bg-rose-500/15 border-rose-500/30 shadow-[0_0_12px_rgba(244,63,94,0.2)]"
+                    : "text-white/80 bg-white/[0.08] border-white/[0.12]"
+                )}>
                   {user.platform}
                 </span>
               </div>
-              <div className="text-xs font-mono text-white/40 mb-1">{user.handle}</div>
-              <p className="text-xs text-white/50 line-clamp-1 max-w-lg font-sans">{user.bio}</p>
+              <div className="text-xs font-mono text-purple-300/80 mb-1">{user.handle}</div>
+              <p className="text-xs text-white/60 line-clamp-1 max-w-lg font-sans">{user.bio}</p>
             </div>
           </div>
 
           {/* Quick Metrics Strip */}
-          <div className="flex items-center gap-6 sm:gap-8 bg-white/[0.02] border border-white/[0.06] rounded-xl px-4 py-2.5">
+          <div className="flex items-center gap-6 sm:gap-8 bg-black/40 backdrop-blur-md border border-white/[0.1] rounded-2xl px-5 py-2.5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
             <div>
-              <div className="text-[10px] font-mono uppercase text-white/40">Audience</div>
-              <div className="text-base font-mono font-medium text-white/90 mt-0.5">{user.followers}</div>
+              <div className="text-[10px] font-mono uppercase tracking-wider text-white/40">Audience</div>
+              <div className="text-base font-mono font-semibold text-white mt-0.5">{user.followers}</div>
             </div>
             <div>
-              <div className="text-[10px] font-mono uppercase text-white/40">Retention</div>
-              <div className="text-base font-mono font-medium text-emerald-400 mt-0.5">{user.engagement}</div>
+              <div className="text-[10px] font-mono uppercase tracking-wider text-white/40">Retention</div>
+              <div className="text-base font-mono font-semibold text-emerald-400 mt-0.5 drop-shadow-[0_0_8px_rgba(52,211,153,0.3)]">{user.engagement}</div>
             </div>
             <div>
-              <div className="text-[10px] font-mono uppercase text-white/40">Catalog</div>
-              <div className="text-base font-mono font-medium text-white/90 mt-0.5">{user.posts}</div>
+              <div className="text-[10px] font-mono uppercase tracking-wider text-white/40">Catalog</div>
+              <div className="text-base font-mono font-semibold text-purple-300 mt-0.5">{user.posts}</div>
             </div>
           </div>
         </div>
@@ -142,31 +155,33 @@ export default function DashboardPage() {
       {/* 2. Precision KPI Metrics Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {[
-          { label: "Avg Views / Drop", value: user.avgViews, icon: Eye, delta: "+28% vs 30d", color: "from-cyan-500/20 to-blue-600/5", border: "border-cyan-500/20", iconColor: "text-cyan-400" },
-          { label: "Avg Likes / Drop", value: user.avgLikes, icon: Heart, delta: "+19% Organic", color: "from-rose-500/20 to-pink-600/5", border: "border-rose-500/20", iconColor: "text-rose-400" },
-          { label: "Avg Comments", value: user.avgComments, icon: MessageCircle, delta: "88% Positive", color: "from-amber-500/20 to-orange-600/5", border: "border-amber-500/20", iconColor: "text-amber-400" },
-          { label: "Vibe Score Retention", value: user.engagement, icon: TrendingUp, delta: "Top 4% Bracket", emerald: true, color: "from-emerald-500/20 to-teal-600/5", border: "border-emerald-500/20", iconColor: "text-emerald-400" },
+          { label: "Avg Views / Drop", value: user.avgViews, icon: Eye, delta: "+28% vs 30d", accent: "text-purple-400", bgGlow: "from-purple-500/10 via-transparent to-transparent", badge: "bg-purple-500/10 text-purple-300 border-purple-500/20" },
+          { label: "Avg Likes / Drop", value: user.avgLikes, icon: Heart, delta: "+19% Organic", accent: "text-rose-400", bgGlow: "from-rose-500/10 via-transparent to-transparent", badge: "bg-rose-500/10 text-rose-300 border-rose-500/20" },
+          { label: "Avg Comments", value: user.avgComments, icon: MessageCircle, delta: "88% Positive", accent: "text-cyan-400", bgGlow: "from-cyan-500/10 via-transparent to-transparent", badge: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20" },
+          { label: "Vibe Score Retention", value: user.engagement, icon: TrendingUp, delta: "Top 4% Bracket", accent: "text-emerald-400", bgGlow: "from-emerald-500/10 via-transparent to-transparent", badge: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20" },
         ].map((stat, i) => (
           <motion.div
             key={stat.label}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.03 }}
-            className={cn("obsidian-card p-4 flex flex-col justify-between relative overflow-hidden group hover:border-opacity-60", stat.border)}
+            className="obsidian-card p-4 sm:p-5 rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:border-white/25 transition-all"
           >
-            <div className={cn("absolute inset-0 bg-gradient-to-br pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity", stat.color)} />
+            {/* Ambient Card Flare */}
+            <div className={cn("absolute inset-0 bg-gradient-to-br opacity-40 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none", stat.bgGlow)} />
+
             <div className="flex items-center justify-between mb-3 relative z-10">
-              <span className="text-xs font-medium text-white/60">{stat.label}</span>
-              <div className={cn("p-1.5 rounded-md bg-white/[0.04] border border-white/[0.08]", stat.iconColor)}>
+              <span className="text-xs font-medium text-white/60 group-hover:text-white/80 transition-colors">{stat.label}</span>
+              <div className={cn("p-2 rounded-xl bg-white/[0.05] border border-white/[0.1] transition-transform group-hover:scale-105", stat.accent)}>
                 <stat.icon className="w-3.5 h-3.5" />
               </div>
             </div>
             <div className="relative z-10">
-              <div className="text-2xl font-medium font-mono tracking-tight text-white mb-1.5">
+              <div className="text-2xl sm:text-3xl font-semibold font-mono tracking-tight text-white mb-2 group-hover:text-white transition-colors">
                 {stat.value}
               </div>
               <div className="flex items-center gap-1.5 text-[11px] font-mono">
-                <span className={stat.emerald ? "text-emerald-400 font-medium" : "text-white/60"}>
+                <span className={cn("px-2 py-0.5 rounded-full border text-[10px] font-medium shadow-xs", stat.badge)}>
                   {stat.delta}
                 </span>
               </div>
@@ -175,6 +190,9 @@ export default function DashboardPage() {
         ))}
       </div>
 
+      {/* 2.5 Live Content Simulator & AI Hook Generation Widget */}
+      <LiveContentSimulator />
+
       {/* 3. Retention Curve Spline & Creative Radar */}
       <div className="grid lg:grid-cols-3 gap-4">
         {/* Retention Area Curve Spline */}
@@ -182,7 +200,7 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="lg:col-span-2 obsidian-card p-5 flex flex-col justify-between border-indigo-500/20"
+          className="lg:col-span-2 obsidian-card p-5 sm:p-6 rounded-2xl flex flex-col justify-between border-white/[0.08]"
         >
           <div>
             {/* Curve Header */}
@@ -239,14 +257,14 @@ export default function DashboardPage() {
                 >
                   <defs>
                     <linearGradient id="cyberAreaGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#8b5cf6" stopOpacity={0.4} />
-                      <stop offset="60%" stopColor="#06b6d4" stopOpacity={0.12} />
-                      <stop offset="100%" stopColor="#06b6d4" stopOpacity={0.0} />
+                      <stop offset="0%" stopColor="#8b5cf6" stopOpacity={0.35} />
+                      <stop offset="50%" stopColor="#06b6d4" stopOpacity={0.12} />
+                      <stop offset="100%" stopColor="#000000" stopOpacity={0.0} />
                     </linearGradient>
                     <linearGradient id="cyberLineGrad" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stopColor="#a855f7" />
-                      <stop offset="50%" stopColor="#6366f1" />
-                      <stop offset="100%" stopColor="#06b6d4" />
+                      <stop offset="0%" stopColor="#8b5cf6" />
+                      <stop offset="50%" stopColor="#06b6d4" />
+                      <stop offset="100%" stopColor="#10b981" />
                     </linearGradient>
                   </defs>
 
@@ -294,8 +312,8 @@ export default function DashboardPage() {
                     fill="url(#cyberAreaGrad)"
                     activeDot={{
                       r: 5,
-                      fill: "#06b6d4",
-                      stroke: "#ffffff",
+                      fill: "#ffffff",
+                      stroke: "#000000",
                       strokeWidth: 2,
                     }}
                     dot={(props: any) => {
@@ -307,8 +325,8 @@ export default function DashboardPage() {
                           cx={cx}
                           cy={cy}
                           r={isSelected ? 5 : 3}
-                          fill={isSelected ? "#06b6d4" : "#8b5cf6"}
-                          stroke="#050508"
+                          fill={isSelected ? "#ffffff" : "#525252"}
+                          stroke="#000000"
                           strokeWidth={2}
                         />
                       );
@@ -338,7 +356,7 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.12 }}
-          className="obsidian-card p-5 flex flex-col justify-between"
+          className="obsidian-card p-5 sm:p-6 rounded-2xl flex flex-col justify-between border-white/[0.08]"
         >
           <div>
             <div className="flex items-center justify-between pb-3.5 border-b border-white/[0.06]">
@@ -348,7 +366,7 @@ export default function DashboardPage() {
                   Creative Radar
                 </h3>
               </div>
-              <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">
+              <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
                 Optimal
               </span>
             </div>
@@ -359,7 +377,7 @@ export default function DashboardPage() {
                 { title: "15s High-Energy Cut", metric: "+92% Completion", score: 95, tag: "Retention Rhythm" },
                 { title: "Carousel Frame Stacking", metric: "+4.2x Bookmarks", score: 74, tag: "Save Multiplier" },
               ].map((item) => (
-                <div key={item.title} className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.05] space-y-2">
+                <div key={item.title} className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] space-y-2">
                   <div className="flex items-start justify-between gap-2">
                     <div>
                       <div className="text-xs font-medium text-white/90">{item.title}</div>
@@ -381,7 +399,7 @@ export default function DashboardPage() {
 
           <Link
             href="/dashboard/virality"
-            className="mt-4 w-full py-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.16] text-white text-xs font-medium flex items-center justify-center gap-2 transition-colors"
+            className="mt-4 w-full py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.16] text-white text-xs font-medium flex items-center justify-center gap-2 transition-colors"
           >
             <Zap className="w-3.5 h-3.5 text-white/60" />
             <span>Run ViralAudit Diagnostic</span>
@@ -420,15 +438,15 @@ export default function DashboardPage() {
                 <Link
                   key={action.href}
                   href={action.href}
-                  className="flex items-center gap-3 obsidian-card p-3 hover:bg-white/[0.04] transition-all group"
+                  className="flex items-center gap-3 obsidian-card p-3 rounded-2xl hover:bg-white/[0.04] transition-all group border-white/[0.06]"
                 >
-                  <div className={cn("w-8 h-8 rounded-lg border flex items-center justify-center transition-colors", iconStyles)}>
+                  <div className={cn("w-9 h-9 rounded-xl border flex items-center justify-center transition-colors", iconStyles)}>
                     <action.icon className="w-4 h-4" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-xs font-medium text-white/90 group-hover:text-white flex items-center justify-between">
                       <span>{action.label}</span>
-                      <span className={cn("text-[9px] font-mono px-1.5 py-0.2 rounded border", badgeStyles)}>
+                      <span className={cn("text-[9px] font-mono px-2 py-0.5 rounded-full border", badgeStyles)}>
                         {action.badge}
                       </span>
                     </div>
@@ -452,7 +470,7 @@ export default function DashboardPage() {
             </Link>
           </div>
 
-          <div className="obsidian-card overflow-hidden border-cyan-500/10">
+          <div className="obsidian-card rounded-2xl overflow-hidden border-white/[0.08]">
             <table className="w-full text-left">
               <thead>
                 <tr className="border-b border-white/[0.06] bg-white/[0.01]">
@@ -468,6 +486,7 @@ export default function DashboardPage() {
                     post.platform === "YouTube" ? "text-rose-400 bg-rose-500/10 border-rose-500/20" :
                     post.platform === "Instagram" ? "text-fuchsia-400 bg-fuchsia-500/10 border-fuchsia-500/20" :
                     post.platform === "TikTok" ? "text-cyan-400 bg-cyan-500/10 border-cyan-500/20" :
+                    post.platform === "Twitch" ? "text-purple-400 bg-purple-500/10 border-purple-500/20" :
                     "text-blue-400 bg-blue-500/10 border-blue-500/20";
 
                   return (

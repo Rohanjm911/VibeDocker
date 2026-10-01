@@ -143,17 +143,17 @@ export default function CalendarPage() {
       <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 pb-5 border-b border-white/[0.08]">
         <div>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600/30 to-cyan-500/30 border border-white/10 flex items-center justify-center text-cyan-300">
+            <div className="w-10 h-10 rounded-2xl bg-white/[0.06] border border-white/[0.12] flex items-center justify-center text-white shadow-sm">
               <CalendarDays className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-2xl font-bold text-white tracking-tight">FlowMatrix</h1>
-                <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
+                <h1 className="text-2xl font-semibold text-white tracking-tight">FlowMatrix</h1>
+                <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/80 border border-white/[0.1]">
                   Release Architecture
                 </span>
               </div>
-              <p className="text-xs text-white/50 mt-0.5">
+              <p className="text-xs text-white/50 mt-0.5 font-sans">
                 Multi-channel broadcast queue, algorithmic drop timing & audience pacing.
               </p>
             </div>
@@ -163,7 +163,7 @@ export default function CalendarPage() {
         {/* Quick Stats & Global Add Action */}
         <div className="flex flex-wrap items-center gap-3">
           {/* Platform filter pills */}
-          <div className="flex items-center gap-1 bg-[#090b12] border border-white/[0.08] p-1 rounded-xl">
+          <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.08] p-1 rounded-xl">
             {["All", "YouTube", "Instagram", "TikTok", "LinkedIn"].map((p) => {
               const count = p === "All" ? items.length : items.filter((it) => it.platform === p).length;
               return (
@@ -173,14 +173,14 @@ export default function CalendarPage() {
                   className={cn(
                     "px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all cursor-pointer flex items-center gap-1.5",
                     activeFilter === p
-                      ? "bg-white/[0.14] text-white shadow-sm"
+                      ? "bg-white text-black font-semibold shadow-sm"
                       : "text-white/40 hover:text-white/80"
                   )}
                 >
                   <span>{p}</span>
                   <span className={cn(
                     "text-[10px] px-1 rounded",
-                    activeFilter === p ? "bg-white/20 text-white" : "text-white/30"
+                    activeFilter === p ? "bg-black/10 text-black font-bold" : "text-white/30"
                   )}>
                     {count}
                   </span>
@@ -191,7 +191,7 @@ export default function CalendarPage() {
 
           <button
             onClick={() => handleOpenAdd(4)} // defaults to today (Thu = 4)
-            className="px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-medium text-xs font-mono transition-all flex items-center gap-2 cursor-pointer shadow-[0_0_18px_rgba(99,102,241,0.35)]"
+            className="px-4 py-2 rounded-xl bg-white hover:bg-white/90 text-black font-semibold text-xs font-mono transition-all flex items-center gap-2 cursor-pointer shadow-sm"
           >
             <Plus className="w-4 h-4" />
             <span>New Drop</span>

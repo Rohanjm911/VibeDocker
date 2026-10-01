@@ -21,7 +21,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   }, [router]);
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#050508] bg-obsidian-grid">
+    <div className="flex h-screen overflow-hidden bg-[#000000] bg-obsidian-grid">
       <OnboardingModal />
       <Sidebar
         mobileOpen={mobileMenuOpen}

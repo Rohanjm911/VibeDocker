@@ -10,6 +10,7 @@ import { useUser } from "@/lib/useUser";
 const allPlatforms = [
   { id: "youtube", label: "YouTube", tag: "YT" },
   { id: "instagram", label: "Instagram", tag: "IG" },
+  { id: "twitch", label: "Twitch", tag: "TTV" },
   { id: "tiktok", label: "TikTok", tag: "TT" },
   { id: "linkedin", label: "LinkedIn", tag: "LI" },
 ];
@@ -37,17 +38,17 @@ export default function SettingsPage() {
   return (
     <div className="p-8 max-w-4xl mx-auto space-y-8 font-sans">
       {/* Header */}
-      <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="flex items-center justify-between border-b border-white/[0.06] pb-6">
+      <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="flex items-center justify-between border-b border-white/[0.08] pb-6">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-[10px] font-mono tracking-widest text-white/40 uppercase">Preferences & Identity</span>
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-white">System Settings</h1>
-          <p className="text-xs text-white/40 mt-1">Configure workspace credentials, API integrations, and alert telemetry</p>
+          <h1 className="text-2xl font-semibold tracking-tight text-white">System Settings</h1>
+          <p className="text-xs text-white/50 mt-1 font-sans">Configure workspace credentials, API integrations, and alert telemetry</p>
         </div>
         <button
           onClick={handleLogout}
-          className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 text-xs font-mono font-medium transition-all border border-rose-500/20"
+          className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-white/80 hover:text-white text-xs font-mono transition-all border border-white/[0.08] cursor-pointer"
         >
           <LogOut className="w-3.5 h-3.5" /> Sign Out
         </button>

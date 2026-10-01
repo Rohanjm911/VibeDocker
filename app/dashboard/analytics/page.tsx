@@ -142,24 +142,24 @@ export default function AnalyticsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-5 border-b border-white/[0.08]">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500/30 via-teal-500/30 to-indigo-500/30 border border-white/10 flex items-center justify-center text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.25)]">
+          <div className="w-10 h-10 rounded-2xl bg-white/[0.06] border border-white/[0.12] flex items-center justify-center text-white shadow-sm">
             <BarChart3 className="w-5 h-5" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-2xl font-bold text-white tracking-tight">Lens Telemetry</h1>
-              <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
+              <h1 className="text-2xl font-semibold text-white tracking-tight">Lens Telemetry</h1>
+              <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/80 border border-white/[0.1]">
                 Audience Optics
               </span>
             </div>
-            <p className="text-xs text-white/50 mt-0.5">
+            <p className="text-xs text-white/50 mt-0.5 font-sans">
               High-precision second-by-second hold curves, retention friction points, and multi-cycle growth.
             </p>
           </div>
         </div>
 
         {/* Range Selector */}
-        <div className="flex items-center gap-1.5 bg-[#090b12] border border-white/[0.08] p-1.5 rounded-xl">
+        <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.08] p-1 rounded-xl">
           {(["7 Days", "30 Days", "90 Days"] as const).map((r) => (
             <button
               key={r}
@@ -167,7 +167,7 @@ export default function AnalyticsPage() {
               className={cn(
                 "px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium transition-all cursor-pointer",
                 range === r
-                  ? "bg-white/[0.14] text-white shadow-sm font-semibold"
+                  ? "bg-white text-black font-semibold shadow-sm"
                   : "text-white/40 hover:text-white/80"
               )}
             >

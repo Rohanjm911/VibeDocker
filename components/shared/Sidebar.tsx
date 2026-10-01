@@ -73,80 +73,62 @@ export default function Sidebar({
         />
       )}
 
-      <aside
-        className={cn(
-          "flex flex-col h-screen border-r border-white/[0.07] bg-[#050508] transition-all duration-200 select-none z-50",
-          "hidden lg:flex relative",
-          collapsed ? "w-18" : "w-64",
-          mobileOpen && "fixed inset-y-0 left-0 flex w-72 max-w-[85vw] shadow-2xl"
-        )}
-      >
-        {/* Logo & Mobile Close */}
-        <div className={cn("px-5 py-4 border-b border-white/[0.07] overflow-hidden flex items-center justify-between", collapsed && "justify-center px-0")}>
-          <Link href="/dashboard" onClick={onMobileClose} className="block">
-            <VibeDockLogo size={collapsed ? "sm" : "default"} withText={!collapsed} />
-          </Link>
-          <button
-            onClick={onMobileClose}
-            className="lg:hidden p-1 rounded-md text-white/50 hover:text-white"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
+        <aside
+          className={cn(
+            "flex flex-col h-screen border-r border-white/[0.06] bg-[#07080d]/80 backdrop-blur-2xl transition-all duration-300 select-none z-50",
+            "hidden lg:flex relative",
+            collapsed ? "w-18" : "w-64",
+            mobileOpen && "fixed inset-y-0 left-0 flex w-72 max-w-[85vw] shadow-2xl"
+          )}
+        >
+          {/* Logo & Mobile Close */}
+          <div className={cn("px-5 py-4 border-b border-white/[0.06] overflow-hidden flex items-center justify-between", collapsed && "justify-center px-0")}>
+            <Link href="/dashboard" onClick={onMobileClose} className="block">
+              <VibeDockLogo size={collapsed ? "sm" : "default"} withText={!collapsed} />
+            </Link>
+            <button
+              onClick={onMobileClose}
+              className="lg:hidden p-1 rounded-md text-white/50 hover:text-white"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
 
-        {/* Nav List */}
-        <nav className="flex-1 py-4 px-3 overflow-y-auto no-scrollbar space-y-5">
-          {navSections.map((section, sIndex) => (
-            <div key={sIndex} className="space-y-1.5">
-              {!collapsed && (
-                <div className="px-3 py-1 text-[11px] font-mono uppercase tracking-wider text-white/40 font-medium">
-                  {section.title}
-                </div>
-              )}
-              {collapsed && sIndex > 0 && (
-                <div className="my-2 border-t border-white/[0.06]" />
-              )}
-              <div className="space-y-1">
-                {section.items.map(({ href, icon: Icon, label }, itemIdx) => {
-                  const active = pathname === href;
-                  
-                  // Colorful accents per section
-                  const sectionColor = 
-                    sIndex === 0 
-                      ? (active ? "text-violet-400" : "text-violet-400/70 group-hover:text-violet-300")
-                      : sIndex === 1
-                      ? (active ? "text-cyan-400" : "text-cyan-400/70 group-hover:text-cyan-300")
-                      : (active ? "text-emerald-400" : "text-emerald-400/70 group-hover:text-emerald-300");
+          {/* Nav List */}
+          <nav className="flex-1 py-4 px-3 overflow-y-auto no-scrollbar space-y-5">
+            {navSections.map((section, sIndex) => (
+              <div key={sIndex} className="space-y-1.5">
+                {!collapsed && (
+                  <div className="px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-white/40 font-medium">
+                    {section.title}
+                  </div>
+                )}
+                {collapsed && sIndex > 0 && (
+                  <div className="my-2 border-t border-white/[0.06]" />
+                )}
+                <div className="space-y-1">
+                  {section.items.map(({ href, icon: Icon, label }) => {
+                    const active = pathname === href;
+                    
+                    const activeGlow = "bg-gradient-to-r from-purple-500/15 via-white/[0.08] to-transparent text-white font-semibold border-white/[0.14] shadow-[0_2px_12px_-2px_rgba(168,85,247,0.25)]";
 
-                  const activeGlow = 
-                    sIndex === 0
-                      ? "bg-violet-500/15 border-violet-500/30 text-white font-semibold shadow-[0_0_20px_rgba(139,92,246,0.15)]"
-                      : sIndex === 1
-                      ? "bg-cyan-500/15 border-cyan-500/30 text-white font-semibold shadow-[0_0_20px_rgba(6,182,212,0.15)]"
-                      : "bg-emerald-500/15 border-emerald-500/30 text-white font-semibold shadow-[0_0_20px_rgba(16,185,129,0.15)]";
-
-                  const indicatorColor = 
-                    sIndex === 0 ? "bg-violet-400 shadow-[0_0_10px_rgba(168,85,247,0.9)]" :
-                    sIndex === 1 ? "bg-cyan-400 shadow-[0_0_10px_rgba(6,182,212,0.9)]" :
-                    "bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.9)]";
-
-                  return (
-                    <Link
-                      key={href}
-                      href={href}
-                      onClick={onMobileClose}
-                      className={cn(
-                        "flex items-center gap-3 px-3 py-2 rounded-xl transition-all group relative text-sm font-medium border border-transparent",
-                        active
-                          ? activeGlow
-                          : "text-white/60 hover:text-white hover:bg-white/[0.05]",
-                        collapsed && "justify-center px-0 py-2.5"
-                      )}
-                    >
+                    return (
+                      <Link
+                        key={href}
+                        href={href}
+                        onClick={onMobileClose}
+                        className={cn(
+                          "flex items-center gap-3 px-3 py-2 rounded-xl transition-all group relative text-xs sm:text-sm font-medium border border-transparent",
+                          active
+                            ? activeGlow
+                            : "text-white/60 hover:text-white hover:bg-white/[0.04]",
+                          collapsed && "justify-center px-0 py-2.5"
+                        )}
+                      >
                       <Icon
                         className={cn(
-                          "w-4.5 h-4.5 flex-shrink-0 transition-colors",
-                          sectionColor
+                          "w-4 h-4 flex-shrink-0 transition-colors",
+                          active ? "text-purple-300" : "text-white/50 group-hover:text-white/80"
                         )}
                       />
 
@@ -155,7 +137,7 @@ export default function Sidebar({
                       )}
 
                       {active && !collapsed && (
-                        <span className={cn("w-1.5 h-4 rounded-full ml-auto flex-shrink-0", indicatorColor)} />
+                        <span className="w-1.5 h-1.5 rounded-full ml-auto flex-shrink-0 bg-purple-400 shadow-[0_0_10px_rgba(192,132,252,0.9)] animate-pulse" />
                       )}
                     </Link>
                   );
@@ -178,6 +160,11 @@ export default function Sidebar({
             <Settings className="w-4.5 h-4.5 flex-shrink-0" />
             {!collapsed && <span>Settings</span>}
           </Link>
+          {!collapsed && (
+            <div className="px-3 pt-2 text-[10px] text-white/40 font-sans tracking-tight">
+              Turning Ideas Into Visual Pieces
+            </div>
+          )}
         </div>
 
         {/* Collapse toggle (desktop only) */}

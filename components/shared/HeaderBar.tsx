@@ -11,25 +11,25 @@ export default function HeaderBar({
   onMenuToggle?: () => void;
 }) {
   return (
-    <header className="h-12 border-b border-white/[0.07] bg-[#050508]/90 backdrop-blur-md px-4 sm:px-6 flex items-center justify-between sticky top-0 z-30 select-none">
+    <header className="h-13 border-b border-white/[0.06] bg-[#07080d]/75 backdrop-blur-2xl px-4 sm:px-6 flex items-center justify-between sticky top-0 z-30 select-none transition-colors">
       {/* Search Input with ⌘K */}
       <div className="flex items-center gap-2.5 sm:gap-3 flex-1 max-w-sm">
         <button
           onClick={onMenuToggle}
-          className="lg:hidden p-1.5 rounded-md text-white/50 hover:text-white"
+          className="lg:hidden p-1.5 rounded-lg text-white/50 hover:text-white hover:bg-white/[0.05]"
           aria-label="Open menu"
         >
           <Menu className="w-4 h-4" />
         </button>
 
         <div className="relative w-full">
-          <Search className="w-3.5 h-3.5 text-white/30 absolute left-2.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-3.5 h-3.5 text-white/40 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             placeholder="Search commands, drafts, hooks..."
-            className="w-full bg-white/[0.03] border border-white/[0.08] focus:border-white/30 rounded-lg pl-8 pr-4 py-1 text-xs text-white placeholder-white/30 focus:outline-none transition-colors font-sans"
+            className="w-full bg-white/[0.04] border border-white/[0.07] focus:border-white/20 rounded-xl pl-9 pr-4 py-1.5 text-xs text-white placeholder-white/30 focus:outline-none transition-all font-sans"
           />
-          <span className="hidden sm:inline-block absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-mono text-white/30">
+          <span className="hidden sm:inline-block absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-mono text-white/30 px-1.5 py-0.5 rounded bg-white/[0.04] border border-white/[0.06]">
             ⌘K
           </span>
         </div>
@@ -47,16 +47,17 @@ export default function HeaderBar({
             }
           }}
           title="Open System Walkthrough"
-          className="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-white/50 hover:text-white hover:bg-white/[0.06] text-xs font-mono transition-colors border border-transparent hover:border-white/[0.08] cursor-pointer"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-white/80 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] text-xs font-mono transition-all border border-white/[0.08] hover:border-white/20 cursor-pointer shadow-sm"
         >
-          <span>Tour Guide</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+          <span>How to use</span>
         </button>
 
         <Link
           href="/dashboard/brain"
-          className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-white/70 hover:text-white hover:bg-white/[0.06] text-xs font-medium transition-colors border border-transparent hover:border-white/[0.08]"
+          className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-white/70 hover:text-white hover:bg-white/[0.06] text-xs font-medium transition-colors border border-transparent hover:border-white/[0.08]"
         >
-          <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+          <Sparkles className="w-3.5 h-3.5 text-white" />
           <span>BrainForge AI</span>
         </Link>
 

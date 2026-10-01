@@ -23,6 +23,7 @@ import {
   Eye,
   EyeOff,
   Terminal,
+  Gamepad2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import VibeDockerLogo from "@/components/shared/VibeDockLogo";
@@ -83,29 +84,29 @@ const demoCreators = [
     },
   },
   {
-    id: "tiktok",
+    id: "twitch",
     label: "Priya Patel",
-    handle: "@priya.beats",
-    icon: Flame,
-    platform: "TikTok",
-    badge: "Viral Audio",
-    tagColor: "border-rose-500/30 text-rose-400 bg-rose-500/10",
+    handle: "@priyapatel.live",
+    icon: Gamepad2,
+    platform: "Twitch",
+    badge: "FPS Streamer",
+    tagColor: "border-purple-500/30 text-purple-300 bg-purple-500/10",
     avatarUrl: "/avatars/nova.jpg",
     user: {
       name: "Priya Patel",
-      handle: "@priyapatel.beats",
+      handle: "@priyapatel.live",
       avatar: "PP",
       avatarUrl: "/avatars/nova.jpg",
-      platform: "tiktok",
+      platform: "twitch",
       followers: "640K",
-      following: "310",
-      posts: "520 drops",
-      engagement: "11.8%",
-      avgLikes: "58.4K",
-      avgComments: "3,420",
-      avgViews: "850K",
-      niche: "Desi Fusion Beats & Viral Trends",
-      bio: "Indie classical meets future bass | Viral audio trends, stems & Bollywood flips ⚡",
+      following: "142",
+      posts: "520 streams",
+      engagement: "14.2%",
+      avgLikes: "38.4K",
+      avgComments: "6,820",
+      avgViews: "42.5K peak",
+      niche: "FPS Esports, Valorant & Speedrunning",
+      bio: "Radiant Ranked FPS Grinder 🎮 Late night community streams, clutch tournament highlights & game reviews 👾",
       verified: true,
     },
   },
@@ -203,28 +204,28 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#08090c] bg-grid-pattern text-neutral-100 flex flex-col justify-between p-4 sm:p-6 lg:px-12 select-none relative overflow-x-hidden">
-      {/* Dynamic Ambient Background Glows */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse" />
-      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-rose-500/5 rounded-full blur-[100px] pointer-events-none -z-10" />
+    <div className="min-h-screen w-full bg-[#000000] bg-obsidian-grid text-neutral-100 flex flex-col justify-between p-4 sm:p-8 lg:px-16 select-none relative overflow-x-hidden">
+      {/* Subtle Spatial Ambient Glows */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-white/[0.03] rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none -z-10" />
 
       {/* Top Navbar */}
-      <header className="w-full max-w-7xl mx-auto flex items-center justify-between py-2 border-b border-[#1b1f2b]">
+      <header className="w-full max-w-6xl mx-auto flex items-center justify-between py-4 border-b border-white/[0.07]">
         <VibeDockerLogo size="default" />
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#12141c] border border-[#232733] text-[11px] font-mono text-neutral-300">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 pulse-dot" />
-          <span className="hidden sm:inline">VIBEDOCKER OPERATIONAL SYSTEM</span>
-          <span className="sm:hidden">VIBEDOCKER OS</span>
-          <span className="text-neutral-600">|</span>
-          <span className="text-red-400 font-semibold">V2.5 PRO</span>
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-neutral-300">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 dot-emerald" />
+          <span className="hidden sm:inline">STUDIO ARCHITECTURE</span>
+          <span className="sm:hidden">STUDIO</span>
+          <span className="text-white/20">/</span>
+          <span className="text-white font-medium">V2.5</span>
         </div>
       </header>
 
       {/* Main Grid Container */}
-      <main className="w-full max-w-7xl mx-auto my-auto py-8 lg:py-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <main className="w-full max-w-6xl mx-auto my-auto py-10 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         
         {/* ================= LEFT COLUMN: SLEEK BRAND SHOWCASE ================= */}
-        <div className="lg:col-span-7 flex flex-col justify-center space-y-7">
+        <div className="lg:col-span-7 flex flex-col justify-center space-y-8">
           
           {/* Tag & Heading */}
           <motion.div
@@ -233,32 +234,32 @@ export default function LoginPage() {
             transition={{ duration: 0.4 }}
             className="space-y-4"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono font-medium">
-              <Sparkles className="w-3.5 h-3.5 text-red-400 animate-spin" style={{ animationDuration: "8s" }} />
-              <span>NEXT-GEN CREATOR INTELLIGENCE</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-white/70 text-xs font-mono">
+              <Sparkles className="w-3.5 h-3.5 text-white" />
+              <span>Turning Ideas Into Visual Pieces</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
-              Scale your media empire with{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-400 to-red-600">
-                Precision AI & Real-time Telemetry
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-[1.12]">
+              Turning ideas into visual pieces with{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/50">
+                Precision Intelligence & Real-time Telemetry
               </span>
             </h1>
 
-            <p className="text-neutral-400 text-sm sm:text-base max-w-xl leading-relaxed">
-              High-voltage studio architecture built for breakout creators. Automate script ideation, analyze multi-platform performance pulses, and command your audience in one unified cockpit.
+            <p className="text-neutral-400 text-sm sm:text-base max-w-xl leading-relaxed font-sans">
+              High-precision studio architecture built for breakout creators. Automate script ideation, analyze multi-platform performance pulses, and command your audience in one unified cockpit.
             </p>
           </motion.div>
 
           {/* Real-time Metric Cards (3 Columns) */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
             {/* Card 1 */}
-            <div className="p-4 rounded-xl bg-[#11131a] border border-[#202534] hover:border-red-500/40 transition-all shadow-sm group">
+            <div className="p-4 sm:p-5 rounded-2xl obsidian-card group">
               <div className="flex items-center justify-between text-neutral-400 mb-2">
-                <span className="text-[11px] font-mono uppercase tracking-wider">Growth Velocity</span>
-                <TrendingUp className="w-4 h-4 text-red-400" />
+                <span className="text-[11px] font-mono uppercase tracking-wider text-white/50">Growth Velocity</span>
+                <TrendingUp className="w-3.5 h-3.5 text-white/70" />
               </div>
-              <div className="text-2xl font-bold font-mono text-white flex items-baseline gap-2">
+              <div className="text-2xl font-semibold font-mono text-white flex items-baseline gap-2">
                 <motion.span
                   key={growthVelocity}
                   initial={{ opacity: 0.6, y: -2 }}
@@ -267,26 +268,26 @@ export default function LoginPage() {
                 >
                   +{growthVelocity}%
                 </motion.span>
-                <span className="text-[11px] font-sans text-emerald-400 font-normal">↑ peak</span>
+                <span className="text-[10px] font-mono text-emerald-400 font-normal">peak</span>
               </div>
-              <p className="text-[11px] text-neutral-500 mt-1">Cross-platform viral lift</p>
-              <div className="w-full bg-[#191d28] h-1.5 rounded-full mt-3 overflow-hidden">
+              <p className="text-[11px] text-white/40 mt-1">Cross-platform lift</p>
+              <div className="w-full bg-white/[0.05] h-1.5 rounded-full mt-3 overflow-hidden">
                 <motion.div
                   initial={{ width: "25%" }}
                   animate={{ width: `${Math.min(95, Math.max(30, (growthVelocity / 50) * 100))}%` }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="h-full bg-gradient-to-r from-red-600 to-red-400 rounded-full"
+                  className="h-full bg-white rounded-full"
                 />
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="p-4 rounded-xl bg-[#11131a] border border-[#202534] hover:border-red-500/40 transition-all shadow-sm group">
+            <div className="p-4 sm:p-5 rounded-2xl obsidian-card group">
               <div className="flex items-center justify-between text-neutral-400 mb-2">
-                <span className="text-[11px] font-mono uppercase tracking-wider">Active Audience</span>
-                <Activity className="w-4 h-4 text-blue-400" />
+                <span className="text-[11px] font-mono uppercase tracking-wider text-white/50">Active Audience</span>
+                <Activity className="w-3.5 h-3.5 text-white/70" />
               </div>
-              <div className="text-2xl font-bold font-mono text-white flex items-baseline gap-2">
+              <div className="text-2xl font-semibold font-mono text-white flex items-baseline gap-2">
                 <motion.span
                   key={activeAudience}
                   initial={{ opacity: 0.6, y: -2 }}
@@ -295,26 +296,26 @@ export default function LoginPage() {
                 >
                   {activeAudience}M
                 </motion.span>
-                <span className="text-[11px] font-sans text-neutral-400 font-normal">creators</span>
+                <span className="text-[10px] font-mono text-white/40 font-normal">creators</span>
               </div>
-              <p className="text-[11px] text-neutral-500 mt-1">Direct algorithmic footprint</p>
-              <div className="w-full bg-[#191d28] h-1.5 rounded-full mt-3 overflow-hidden">
+              <p className="text-[11px] text-white/40 mt-1">Algorithmic footprint</p>
+              <div className="w-full bg-white/[0.05] h-1.5 rounded-full mt-3 overflow-hidden">
                 <motion.div
                   initial={{ width: "40%" }}
                   animate={{ width: `${Math.min(96, Math.max(40, ((activeAudience - 1.2) / 0.15) * 100))}%` }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="h-full bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full"
+                  className="h-full bg-white/80 rounded-full"
                 />
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="p-4 rounded-xl bg-[#11131a] border border-[#202534] hover:border-red-500/40 transition-all shadow-sm group">
+            <div className="p-4 sm:p-5 rounded-2xl obsidian-card group">
               <div className="flex items-center justify-between text-neutral-400 mb-2">
-                <span className="text-[11px] font-mono uppercase tracking-wider">Neural Engine</span>
-                <Cpu className="w-4 h-4 text-emerald-400" />
+                <span className="text-[11px] font-mono uppercase tracking-wider text-white/50">Neural Engine</span>
+                <Cpu className="w-3.5 h-3.5 text-white/70" />
               </div>
-              <div className="text-2xl font-bold font-mono text-white flex items-baseline gap-2">
+              <div className="text-2xl font-semibold font-mono text-white flex items-baseline gap-2">
                 <motion.span
                   key={neuralLatency}
                   initial={{ opacity: 0.6, y: -2 }}
@@ -323,35 +324,35 @@ export default function LoginPage() {
                 >
                   {neuralLatency}s
                 </motion.span>
-                <span className="text-[11px] font-sans text-emerald-400 font-normal">ultra-low</span>
+                <span className="text-[10px] font-mono text-emerald-400 font-normal">ultra-low</span>
               </div>
-              <p className="text-[11px] text-neutral-500 mt-1">DeepSeek / OpenAI inference</p>
-              <div className="w-full bg-[#191d28] h-1.5 rounded-full mt-3 overflow-hidden">
+              <p className="text-[11px] text-white/40 mt-1">Real-time inference</p>
+              <div className="w-full bg-white/[0.05] h-1.5 rounded-full mt-3 overflow-hidden">
                 <motion.div
                   initial={{ width: "60%" }}
                   animate={{ width: `${Math.min(98, Math.max(35, ((0.45 - neuralLatency) / 0.25) * 100))}%` }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="h-full bg-gradient-to-r from-emerald-500 to-teal-300 rounded-full"
+                  className="h-full bg-white/90 rounded-full"
                 />
               </div>
             </div>
           </div>
 
           {/* Equalizer & Audio Waveform Feed */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#11131a] border border-[#202534] space-y-3.5">
+          <div className="p-5 rounded-2xl obsidian-card space-y-3.5">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-xs font-mono font-semibold text-neutral-200 uppercase tracking-wider">
-                <Radio className="w-4 h-4 text-red-500 animate-pulse" />
+              <div className="flex items-center gap-2 text-xs font-mono font-medium text-neutral-200 uppercase tracking-wider">
+                <Radio className="w-3.5 h-3.5 text-white/70" />
                 Real-time Platform Feed & Neural Hooks
               </div>
               <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
                 Live Stream
               </div>
             </div>
 
             {/* Soundwave bars */}
-            <div className="flex items-end gap-1.5 h-10 w-full px-2.5 py-1 bg-[#090a0f] rounded-lg border border-[#1b1f2b]">
+            <div className="flex items-end gap-1.5 h-10 w-full px-3 py-1 bg-white/[0.02] rounded-xl border border-white/[0.06]">
               {[45, 80, 35, 95, 60, 85, 40, 100, 70, 50, 90, 35, 75, 60, 88, 55, 92, 45, 80, 65, 85, 40, 95, 70, 55, 80, 65, 90, 45, 75].map((h, i) => (
                 <motion.div
                   key={i}
@@ -367,7 +368,7 @@ export default function LoginPage() {
                   }}
                   className={cn(
                     "flex-1 rounded-t-sm",
-                    i % 3 === 0 ? "bg-red-500" : i % 2 === 0 ? "bg-red-400/80" : "bg-neutral-600"
+                    i % 3 === 0 ? "bg-white" : i % 2 === 0 ? "bg-white/60" : "bg-white/20"
                   )}
                 />
               ))}
@@ -375,16 +376,16 @@ export default function LoginPage() {
 
             {/* Activity entries */}
             <div className="space-y-1.5 font-mono text-xs text-neutral-400">
-              <div className="flex items-center justify-between px-3 py-1.5 rounded-lg bg-[#151822] border border-[#212636]">
+              <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-white/[0.02] border border-white/[0.05]">
                 <div className="flex items-center gap-2 truncate">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                   <span className="text-neutral-300 text-[11px] truncate">AI Script Synthesizer v3.4 generated 14 hooks</span>
                 </div>
                 <span className="text-[10px] text-neutral-500 flex-shrink-0">just now</span>
               </div>
-              <div className="flex items-center justify-between px-3 py-1.5 rounded-lg bg-[#151822] border border-[#212636]">
+              <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-white/[0.02] border border-white/[0.05]">
                 <div className="flex items-center gap-2 truncate">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/70" />
                   <span className="text-neutral-300 text-[11px] truncate">Viral pulse detected: +18.4% reach velocity on Reels</span>
                 </div>
                 <span className="text-[10px] text-neutral-500 flex-shrink-0">2m ago</span>
@@ -399,39 +400,36 @@ export default function LoginPage() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
-            className="w-full max-w-[440px]"
+            className="w-full max-w-[420px]"
           >
             {/* The Login Card Container */}
-            <div className="bg-[#101218] rounded-2xl border border-[#232734] shadow-2xl relative overflow-hidden">
-              {/* Crimson Accent Top Bar */}
-              <div className="h-1 bg-gradient-to-r from-red-600 via-rose-500 to-red-500" />
-
-              <div className="p-6 sm:p-7 space-y-6">
+            <div className="obsidian-card p-6 sm:p-8 rounded-3xl relative overflow-hidden shadow-2xl">
+              <div className="space-y-6">
                 {/* Header with Title & Subtitle */}
                 <div className="flex items-start justify-between">
                   <div>
-                    <h2 className="text-xl font-bold text-white tracking-tight">Sign in to VibeDocker</h2>
-                    <p className="text-neutral-400 text-xs mt-1">Access your high-voltage studio cockpit</p>
+                    <h2 className="text-xl font-semibold text-white tracking-tight">Sign in to VibeDocker</h2>
+                    <p className="text-neutral-400 text-xs mt-1">Access your studio cockpit</p>
                   </div>
                   <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     SECURE
                   </span>
                 </div>
 
                 {/* Switch Tabs: Account Login vs Demo Channels */}
-                <div className="grid grid-cols-2 gap-1 p-1 bg-[#161822] rounded-xl border border-[#232838]">
+                <div className="grid grid-cols-2 gap-1 p-1 bg-white/[0.03] rounded-xl border border-white/[0.07]">
                   <button
                     type="button"
                     onClick={() => setAuthMode("credentials")}
                     className={cn(
                       "py-2 text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5",
                       authMode === "credentials"
-                        ? "bg-[#212636] text-white shadow-sm border border-[#2f364a]"
+                        ? "bg-white text-black shadow-sm font-semibold"
                         : "text-neutral-400 hover:text-white"
                     )}
                   >
-                    <Lock className="w-3.5 h-3.5 text-red-400" />
+                    <Lock className="w-3.5 h-3.5" />
                     Credentials
                   </button>
                   <button
@@ -440,11 +438,11 @@ export default function LoginPage() {
                     className={cn(
                       "py-2 text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5",
                       authMode === "social"
-                        ? "bg-[#212636] text-white shadow-sm border border-[#2f364a]"
+                        ? "bg-white text-black shadow-sm font-semibold"
                         : "text-neutral-400 hover:text-white"
                     )}
                   >
-                    <Radio className="w-3.5 h-3.5 text-red-400" />
+                    <Radio className="w-3.5 h-3.5" />
                     Demo Channels
                   </button>
                 </div>
@@ -467,7 +465,7 @@ export default function LoginPage() {
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="creator@vibedocker.ai"
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#151722] border border-[#242938] text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all font-mono"
+                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.09] text-xs sm:text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-all font-mono"
                           required
                         />
                       </div>
@@ -477,7 +475,7 @@ export default function LoginPage() {
                     <div className="space-y-1.5">
                       <div className="flex items-center justify-between">
                         <label className="text-xs font-medium text-neutral-300">Password</label>
-                        <a href="#forgot" onClick={(e) => e.preventDefault()} className="text-xs text-red-400 hover:text-red-300 hover:underline">
+                        <a href="#forgot" onClick={(e) => e.preventDefault()} className="text-xs text-neutral-400 hover:text-white transition-colors">
                           Forgot password?
                         </a>
                       </div>
@@ -490,7 +488,7 @@ export default function LoginPage() {
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           placeholder="Enter your password"
-                          className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-[#151722] border border-[#242938] text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all font-mono"
+                          className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.09] text-xs sm:text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-all font-mono"
                           required
                         />
                         <button
@@ -501,7 +499,7 @@ export default function LoginPage() {
                           aria-label={showPassword ? "Hide password" : "Show password"}
                         >
                           {showPassword ? (
-                            <EyeOff className="w-4 h-4 text-red-400 hover:text-red-300" />
+                            <EyeOff className="w-4 h-4 text-white" />
                           ) : (
                             <Eye className="w-4 h-4 text-neutral-400 hover:text-neutral-200" />
                           )}
@@ -516,12 +514,12 @@ export default function LoginPage() {
                           type="checkbox"
                           checked={rememberMe}
                           onChange={(e) => setRememberMe(e.target.checked)}
-                          className="w-3.5 h-3.5 rounded bg-[#161822] border-[#2d3447] text-red-600 focus:ring-0 accent-red-600"
+                          className="w-3.5 h-3.5 rounded bg-white/[0.04] border-white/20 text-white focus:ring-0 accent-white"
                         />
                         <span>Remember studio session</span>
                       </label>
-                      <span className="text-[11px] font-mono text-emerald-400 flex items-center gap-1">
-                        <Shield className="w-3 h-3" /> SSL 256-bit
+                      <span className="text-[11px] font-mono text-neutral-400 flex items-center gap-1">
+                        <Shield className="w-3 h-3 text-emerald-400" /> SSL 256-bit
                       </span>
                     </div>
 
@@ -529,11 +527,11 @@ export default function LoginPage() {
                     <button
                       type="submit"
                       disabled={loading !== null}
-                      className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-semibold text-sm shadow-lg shadow-red-600/20 hover:shadow-red-600/35 transition-all flex items-center justify-center gap-2 group disabled:opacity-60"
+                      className="w-full py-3 px-4 rounded-xl bg-white hover:bg-white/90 text-black font-semibold text-xs sm:text-sm shadow-sm transition-all flex items-center justify-center gap-2 group disabled:opacity-60 cursor-pointer"
                     >
                       {loading === "credentials" ? (
                         <>
-                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
                           <span>Authorizing Cockpit...</span>
                         </>
                       ) : (
@@ -555,25 +553,25 @@ export default function LoginPage() {
                         key={creator.id}
                         onClick={() => handleChannelLogin(creator)}
                         disabled={loading !== null}
-                        className="w-full flex items-center gap-3 px-3 py-2 rounded-xl bg-[#151722] hover:bg-[#1b1e2c] border border-[#222736] hover:border-red-500/50 transition-all text-left group"
+                        className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.06] hover:border-white/20 transition-all text-left group cursor-pointer"
                       >
-                        <div className="relative w-9 h-9 rounded-lg overflow-hidden bg-[#1c202d] border border-[#2b3245] flex items-center justify-center flex-shrink-0">
+                        <div className="relative w-9 h-9 rounded-xl overflow-hidden bg-white/[0.04] border border-white/[0.08] flex items-center justify-center flex-shrink-0">
                           {creator.avatarUrl ? (
                             <img src={creator.avatarUrl} alt={creator.label} className="w-full h-full object-cover" />
                           ) : (
-                            <span className="text-xs font-bold">{creator.user.avatar}</span>
+                            <span className="text-xs font-bold text-white">{creator.user.avatar}</span>
                           )}
-                          <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#11131a] border border-[#2c3346] flex items-center justify-center text-red-400">
+                          <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-black border border-white/20 flex items-center justify-center text-white/80">
                             <creator.icon className="w-2.5 h-2.5" />
                           </div>
                         </div>
 
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center justify-between">
-                            <span className="text-xs font-bold text-neutral-200 group-hover:text-white truncate">
+                            <span className="text-xs font-semibold text-neutral-200 group-hover:text-white truncate">
                               {creator.label}
                             </span>
-                            <span className={cn("text-[9px] font-mono px-1.5 py-0.5 rounded border", creator.tagColor)}>
+                            <span className="text-[9px] font-mono px-1.5 py-0.2 rounded-full border text-white/70 bg-white/[0.04] border-white/[0.08]">
                               {creator.platform}
                             </span>
                           </div>
@@ -583,9 +581,9 @@ export default function LoginPage() {
                         </div>
 
                         {loading === creator.id ? (
-                          <div className="w-4 h-4 border-2 border-neutral-600 border-t-red-500 rounded-full animate-spin flex-shrink-0" />
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin flex-shrink-0" />
                         ) : (
-                          <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:text-red-400 group-hover:translate-x-0.5 transition-transform flex-shrink-0" />
+                          <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:text-white group-hover:translate-x-0.5 transition-transform flex-shrink-0" />
                         )}
                       </button>
                     ))}
@@ -593,14 +591,14 @@ export default function LoginPage() {
                 )}
 
                 {/* Quick Switch Helper Divider */}
-                <div className="pt-2 border-t border-[#1c202c] flex items-center justify-between text-xs text-neutral-400">
+                <div className="pt-2 border-t border-white/[0.06] flex items-center justify-between text-xs text-neutral-400">
                   <span>Don&apos;t have an account?</span>
                   <button
                     type="button"
                     onClick={() => {
                       setAuthMode(authMode === "credentials" ? "social" : "credentials");
                     }}
-                    className="text-red-400 font-medium hover:underline hover:text-red-300"
+                    className="text-white hover:underline cursor-pointer"
                   >
                     {authMode === "credentials" ? "Use Demo Channels →" : "Use Credentials →"}
                   </button>
@@ -608,16 +606,16 @@ export default function LoginPage() {
 
                 {/* Footer Badges */}
                 <div className="grid grid-cols-3 gap-2 text-center text-xs text-neutral-400 pt-1">
-                  <div className="flex flex-col items-center gap-1 py-1.5 px-1 rounded-lg bg-[#141620] border border-[#202534]">
-                    <Shield className="w-3.5 h-3.5 text-emerald-400" />
+                  <div className="flex flex-col items-center gap-1 py-2 px-1 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                    <Shield className="w-3.5 h-3.5 text-white/70" />
                     <span className="text-[10px] font-mono">Isolated Data</span>
                   </div>
-                  <div className="flex flex-col items-center gap-1 py-1.5 px-1 rounded-lg bg-[#141620] border border-[#202534]">
-                    <Zap className="w-3.5 h-3.5 text-red-400" />
+                  <div className="flex flex-col items-center gap-1 py-2 px-1 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                    <Zap className="w-3.5 h-3.5 text-white/70" />
                     <span className="text-[10px] font-mono">Instant Auth</span>
                   </div>
-                  <div className="flex flex-col items-center gap-1 py-1.5 px-1 rounded-lg bg-[#141620] border border-[#202534]">
-                    <Sparkles className="w-3.5 h-3.5 text-neutral-300" />
+                  <div className="flex flex-col items-center gap-1 py-2 px-1 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                    <Sparkles className="w-3.5 h-3.5 text-white/70" />
                     <span className="text-[10px] font-mono">OpenRouter AI</span>
                   </div>
                 </div>
@@ -628,9 +626,9 @@ export default function LoginPage() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full max-w-7xl mx-auto pt-3 border-t border-[#1b1f2b] text-center">
+      <footer className="w-full max-w-6xl mx-auto pt-4 border-t border-white/[0.07] text-center">
         <p className="text-[11px] text-neutral-500 font-mono">
-          VibeDocker OS &copy; {new Date().getFullYear()} — High-Voltage Creator Architecture
+          VibeDocker OS &copy; {new Date().getFullYear()} — Studio Architecture
         </p>
       </footer>
     </div>
