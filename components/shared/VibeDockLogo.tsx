@@ -18,13 +18,13 @@ export function VibeDockerLogo({
     <div className={`flex items-center gap-2.5 select-none ${className}`}>
       {/* Brand Master Mark Badge */}
       <div
-        className={`relative ${dimensions.box} rounded-xl bg-white/[0.04] border border-white/[0.12] p-[1px] flex-shrink-0 shadow-[0_2px_12px_-2px_rgba(255,255,255,0.12)] overflow-hidden group hover:border-white/30 transition-all`}
+        className={`relative ${dimensions.box} rounded-xl bg-white p-[2px] flex-shrink-0 shadow-[0_2px_14px_rgba(255,255,255,0.25)] overflow-hidden group hover:scale-105 transition-all`}
       >
-        <div className="w-full h-full bg-[#08080c] rounded-[10px] flex items-center justify-center overflow-hidden">
+        <div className="w-full h-full bg-white rounded-[9px] flex items-center justify-center overflow-hidden">
           <img
             src="/brand-logo.png"
             alt="VibeDocker Brand Logo"
-            className="w-full h-full object-contain p-0.5 mix-blend-screen scale-110"
+            className="w-full h-full object-contain p-0.5"
           />
         </div>
       </div>

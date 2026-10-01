@@ -9,11 +9,13 @@
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=3000&pause=1000&color=FFFFFF&center=true&vCenter=true&multiline=true&width=620&height=80&lines=TURNING+IDEAS+INTO+VISUAL+PIECES;HIGH-PRECISION+CREATOR+OPERATING+SYSTEM;NEURAL+SCRIPT+ENGINE+%E2%80%A2+TELEMETRY+RADAR" alt="Typing SVG" />
 </a>
 
-<br/>
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/brand-logo.png">
+    <img src="public/brand-logo.png" alt="VibeDocker Brand Logo" width="220" style="border-radius: 12px; background: #ffffff; padding: 12px;" />
+  </picture>
+</div>
 
-<img src="./public/brand-logo.png" alt="VibeDocker Brand Logo" width="160" />
-
-<br/>
 <br/>
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.2.6-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
