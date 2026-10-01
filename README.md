@@ -10,10 +10,9 @@
 </a>
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="public/brand-logo.png">
-    <img src="public/brand-logo.png" alt="VibeDocker Brand Logo" width="220" style="border-radius: 12px; background: #ffffff; padding: 12px;" />
-  </picture>
+  <div style="display: inline-block; background: #07080e; border: 1px solid rgba(168, 85, 247, 0.4); border-radius: 16px; padding: 18px 24px; box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);">
+    <img src="public/brand-logo.png" alt="VibeDocker Cyberpunk Hologram Logo" width="260" />
+  </div>
 </div>
 
 <br/>

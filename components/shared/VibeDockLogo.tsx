@@ -16,15 +16,15 @@ export function VibeDockerLogo({
 
   return (
     <div className={`flex items-center gap-2.5 select-none ${className}`}>
-      {/* Brand Master Mark Badge */}
+      {/* Cyberpunk Hologram Brand Mark */}
       <div
-        className={`relative ${dimensions.box} rounded-xl bg-white p-[2px] flex-shrink-0 shadow-[0_2px_14px_rgba(255,255,255,0.25)] overflow-hidden group hover:scale-105 transition-all`}
+        className={`relative ${dimensions.box} rounded-xl bg-[#08090f]/90 border border-purple-500/30 p-[1.5px] flex-shrink-0 shadow-[0_0_16px_rgba(168,85,247,0.35)] overflow-hidden group hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(56,189,248,0.45)] transition-all`}
       >
-        <div className="w-full h-full bg-white rounded-[9px] flex items-center justify-center overflow-hidden">
+        <div className="w-full h-full bg-[#05060a] rounded-[9px] flex items-center justify-center overflow-hidden">
           <img
             src="/brand-logo.png"
             alt="VibeDocker Brand Logo"
-            className="w-full h-full object-contain p-0.5"
+            className="w-full h-full object-contain p-0.5 filter drop-shadow-[0_0_6px_rgba(56,189,248,0.4)]"
           />
         </div>
       </div>
