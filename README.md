@@ -124,6 +124,109 @@ VibeDocker is engineered using a modern, performance-first web architecture:
 
 ---
 
+## 📸 Interface Showcase & Visual Cockpit Walkthrough
+
+Explore the hardware-accelerated obsidian spatial design system and neural creator workflows across VibeDocker OS:
+
+### 1. ⚡ Command Deck & Live Creator Telemetry
+> Centralized cockpit featuring real-time creator intelligence, attention retention curve splines, Twitch livestream telemetry, and second-by-second hold rates.
+
+<p align="center">
+  <img src="screenshots/02-command-deck.png" alt="VibeDocker Command Deck & Creator Telemetry" width="100%" />
+</p>
+
+---
+
+### 2. 🧠 BrainForge AI • Neural Script Studio
+> Full-length multi-platform script generation powered by Llama 3.3 70B via OpenRouter. Generates 0–3s dopamine hooks, cadence pacing, and second-by-second director cut blueprints.
+
+<p align="center">
+  <img src="screenshots/03-neural-script-studio.png" alt="BrainForge AI Neural Script Studio" width="100%" />
+</p>
+
+---
+
+### 3. 🎯 ViralAudit 360 • Virality Diagnostic Matrix
+> Real-time Curiosity Scoring (0–100), cadence rhythm heuristics, and second-by-second drop-off simulation to bulletproof hooks and scripts before publishing.
+
+<p align="center">
+  <img src="screenshots/04-virality-matrix.png" alt="ViralAudit 360 Virality Matrix" width="100%" />
+</p>
+
+---
+
+### 4. 📊 Lens Telemetry • Attention Retention & Velocity Splines
+> High-precision performance optics tracking 3-second hold rates, cross-platform view velocity, and drop-off friction points across 30-day publishing cycles.
+
+<p align="center">
+  <img src="screenshots/05-audience-analytics.png" alt="Lens Telemetry Audience Analytics" width="100%" />
+</p>
+
+---
+
+### 5. 📅 FlowMatrix • Multi-Channel Broadcast Release Architecture
+> Visual calendar matrix for cross-platform release synchronization across YouTube Cinema, Instagram Reels, TikTok, and Twitch drops with autopost status tracking.
+
+<p align="center">
+  <img src="screenshots/06-calendar-schedule.png" alt="FlowMatrix Release Calendar" width="100%" />
+</p>
+
+---
+
+### 6. 🤝 Creator Uplink • Co-Creation Partner Matching
+> Algorithmic creator network analyzing audience synergy scores, cross-distribution upsides, and automated co-production pitch generation.
+
+<p align="center">
+  <img src="screenshots/07-channel-connect.png" alt="Creator Uplink Network Hub" width="100%" />
+</p>
+
+---
+
+### 7. 💰 Sponsor Readiness & Dynamic CPM Valuation
+> Tier-2 commercial audit vectors, automated audience trust index, enterprise brand safety verification, and interactive sponsorship quote calculator.
+
+<p align="center">
+  <img src="screenshots/10-sponsor-readiness.png" alt="Sponsor Readiness & Dynamic CPM Valuation" width="100%" />
+</p>
+
+---
+
+### 8. 🪝 Neural Hook Generator • Archetype Matrix
+> Multi-vector hook synthesis across 6 psychological archetypes (Curiosity Gap, Bold Claim, Question, Story Arc, Controversy, Number/List) across all channels.
+
+<p align="center">
+  <img src="screenshots/11-hook-generator.png" alt="Neural Hook Generator & Archetype Laboratory" width="100%" />
+</p>
+
+---
+
+### 9. 🔐 Cyberpunk Authentication Gateway & Creator Vault
+> Instant demo switcher pre-seeded with active creator personas (Priya Patel, Aarav Sharma, Aria Thorne, Marcus Vance), secure auth vault, and real-time telemetry tickers.
+
+<p align="center">
+  <img src="screenshots/01-login-cockpit.png" alt="Cyberpunk Authentication Gateway" width="100%" />
+</p>
+
+---
+
+### 10. 🧭 Interactive Onboarding Architecture Tour
+> Interactive 7-stage architectural walkthrough introducing first-time directors to the telemetry radar, BrainForge AI studio, and commercial engines.
+
+<p align="center">
+  <img src="screenshots/09-interactive-tour.png" alt="Interactive Onboarding Architecture Tour" width="100%" />
+</p>
+
+---
+
+### 11. ⚙️ Obsidian Spatial System Settings
+> Creator credential management, OAuth platform uplinks, telemetry alert thresholds, and hardware-accelerated dark theme controls.
+
+<p align="center">
+  <img src="screenshots/08-settings-obsidian.png" alt="Obsidian Spatial System Settings" width="100%" />
+</p>
+
+---
+
 ## 📂 Project File Structure
 
 ```text
@@ -136,9 +239,12 @@ VibeDocker/
 │   │   ├── layout.tsx             # Persistent Dashboard layout (Sidebar, HeaderBar, Auth guard)
 │   │   ├── page.tsx               # Main Dashboard overview & telemetry metrics
 │   │   ├── analytics/page.tsx     # Deep-dive audience & performance analytics
+│   │   ├── audience/page.tsx      # Audience demographic & sentiment intelligence
 │   │   ├── brain/page.tsx         # AI Script Studio & neural idea generator
+│   │   ├── brand/page.tsx         # Sponsor Readiness & Dynamic CPM Valuation
 │   │   ├── calendar/page.tsx      # Multi-platform content release scheduling
 │   │   ├── connect/page.tsx       # Platform accounts connection manager (Twitch, YT, IG, X, TikTok)
+│   │   ├── hook/page.tsx          # Neural Hook Generator & psychological archetype lab
 │   │   ├── settings/page.tsx      # Creator configuration, API keys, and theme settings
 │   │   └── virality/page.tsx      # Virality scoring predictor & benchmark tool
 │   ├── login/page.tsx             # High-energy login page with instant demo creator profiles
@@ -164,7 +270,9 @@ VibeDocker/
 ├── public/
 │   ├── avatars/                   # Pre-seeded creator avatar portrait photographs
 │   ├── brand-logo.png             # Official VibeDocker brand logo asset
+│   ├── screenshots/               # High-resolution UI cockpit captures
 │   └── vibedocker-icon.svg        # Branded primary icon asset
+├── screenshots/                   # Root directory mirror of UI interface screenshots
 ├── HOW_TO_RUN.md                  # Comprehensive step-by-step run & deployment guide
 ├── PACKAGES_AND_EXTENSIONS.md     # Directory of all packages and recommended IDE extensions
 └── package.json                   # Project metadata, dependencies, and script definitions
